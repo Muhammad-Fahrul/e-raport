@@ -1,0 +1,28 @@
+.container-students .form-search {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.container-students .form-search .search-icon-container {
+  position: absolute;
+  top: 1px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding-left: 0.6em;
+  height: 100%;
+}
+
+.container-students .form-search input {
+  padding: 0.5em 1em 0.5em 3em;
+  border-radius: 50px;
+  border: 1px solid rgba(22, 22, 22, 0.507);
+  width: 100%;
+  font-size: 1rem;
+}
+.students {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-transform: capitalize;
+}

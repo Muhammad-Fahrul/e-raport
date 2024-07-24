@@ -1,0 +1,25 @@
+.container-raport .container-raport-builder {
+  max-width: 400px;
+}
+
+.container-raport button {
+  color: white;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(252, 64, 64);
+  border: none;
+  padding: 0.3em;
+  border-radius: 100px;
+}
+
+.container-raport button.add-new-input {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+}
+
+.container-raport button.detail-raport-preview-btn {
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  color: var(--primary-color);
+}

@@ -1,0 +1,48 @@
+.container-raport-detail {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.377);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1em;
+}
+
+.container-raport-detail .wrapper-raport-detail {
+  width: 100%;
+  padding: 1em;
+  min-width: 250px;
+  min-height: 250px;
+  background-color: white;
+  border-radius: 15px;
+  gap: 0.5em;
+}
+
+.container-raport-detail .wrapper-raport-detail div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.container-raport-detail .wrapper-raport-detail table th,
+.container-raport-detail .wrapper-raport-detail table td {
+  font-weight: 300;
+  text-align: start;
+  vertical-align: top;
+}
+
+.container-raport-detail .wrapper-raport-detail .delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 93, 93);
+}
+
+.container-raport-detail .wrapper-raport-detail .arrayItem li {
+  list-style: decimal;
+}

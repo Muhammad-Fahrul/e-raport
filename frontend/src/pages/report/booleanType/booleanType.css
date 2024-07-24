@@ -1,0 +1,99 @@
+/* studentReport.css */
+
+/* Container styling */
+.student-reports {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Report group styling */
+.report-group {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Report group header */
+.report-group h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: capitalize;
+}
+
+/* Dropdown styling */
+.report-group select {
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.report-group select:focus {
+  border-color: #007bff;
+}
+
+/* Table styling */
+.report-group table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.report-group th,
+.report-group td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.report-group th {
+  background-color: var(--primary-color);
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.report-group td {
+  background-color: #fff;
+  color: #333;
+}
+
+.report-group tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Table hover effect */
+.report-group tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .report-group h3 {
+    font-size: 18px;
+  }
+
+  .report-group select {
+    font-size: 14px;
+  }
+
+  .report-group th,
+  .report-group td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

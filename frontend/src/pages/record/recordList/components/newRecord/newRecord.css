@@ -1,0 +1,148 @@
+.container-raport-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.651);
+}
+
+.container-raport-new .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: #fff;
+  position: relative;
+}
+
+.container-raport-new .wrapper .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -30px;
+  right: 0;
+  cursor: pointer;
+  border-radius: 100px;
+  font-weight: 900;
+  background-color: #fff;
+  color: rgb(241, 44, 44);
+}
+
+.container-raport-new .wrapper .inputBox {
+  position: relative;
+  width: 200px;
+}
+
+.container-raport-new .wrapper .inputBox label {
+  font-size: 14px;
+}
+
+.container-raport-new .wrapper .inputBox input {
+  width: 100%;
+  padding: 5px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.container-raport-new .wrapper .inputBox span {
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  width: 90px;
+}
+
+.container-raport-new .wrapper .inputBox input:valid ~ span,
+.container-raport-new .wrapper .inputBox input:focus ~ span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+  text-align: center;
+}
+
+.container-raport-new .wrapper .inputBox input:valid,
+.container-raport-new .wrapper .inputBox input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.container-raport-new .wrapper .inputBox .array-opt {
+  border: 1px solid black;
+  padding: 0.3em;
+  border-radius: 5px;
+}
+
+.container-raport-new .wrapper .inputBox .array-opt .array-item input {
+  width: auto;
+}
+
+.container-raport-new .wrapper .inputBox .array-opt .array-item {
+  display: flex;
+  gap: 0.3em;
+}
+
+.container-raport-new .wrapper .input-status {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+
+.container-raport-new .wrapper .enter {
+  margin-top: 1em;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.container-raport-new .wrapper .inputBox:has(select) {
+  margin-block: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-raport-new .wrapper .inputBox select {
+  text-transform: capitalize;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.container-raport-new .wrapper .inputBox select option:first-child {
+  text-align: center;
+}

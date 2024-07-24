@@ -1,0 +1,9 @@
+.back {
+  width: 28px;
+  height: 28px;
+  border-radius: 100px;
+  background-color: var(--primary-color);
+  color: var(--af-white);
+  font-size: 1.2rem;
+  border: none;
+}

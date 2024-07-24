@@ -1,0 +1,21 @@
+.container-raport .modal {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  visibility: hidden; /* Avoid interaction when hidden */
+  padding: 0.3em;
+}
+
+.container-raport .modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container-raport .modal.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.container-raport .modal.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}

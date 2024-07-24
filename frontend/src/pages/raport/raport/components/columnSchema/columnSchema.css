@@ -1,0 +1,41 @@
+.container-raport .schema-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.container-raport .schema-content input {
+  padding: 0.3em;
+}
+
+.container-raport select {
+  width: 100px;
+  padding-block: 0.2em;
+}
+
+.container-raport select:disabled {
+  position: relative;
+  z-index: -1;
+  width: 100px;
+}
+
+.container-raport .raport-btns {
+  display: flex;
+  gap: 0.2em;
+}
+
+.container-raport .raport-btns button {
+  margin-top: 0.5em;
+  width: 50%;
+  border-radius: 0;
+}
+
+.container-raport .raport-btns .validate-btn {
+  background-color: yellowgreen;
+}
+
+.container-raport .raport-btns .validate-btn:disabled {
+  margin-top: 0.5em;
+  width: 100%;
+  border-radius: 0;
+  background-color: rgb(170, 167, 167);
+}

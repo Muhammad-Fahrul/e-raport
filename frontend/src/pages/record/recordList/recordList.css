@@ -1,0 +1,23 @@
+.container-raport {
+  text-transform: capitalize;
+  overflow: hidden;
+}
+
+.container-raport .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--night-rider);
+  padding: 0.5em 1em;
+  border: 2px solid transparent;
+  margin-bottom: 0.5em;
+}
+
+.container-raport .top .username {
+  font-size: 1.3rem;
+  border-bottom: 1px solid #645bff;
+}
+
+.container-raport .top .username span {
+  color: #645bff;
+}

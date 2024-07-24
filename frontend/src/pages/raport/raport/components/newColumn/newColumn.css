@@ -1,0 +1,34 @@
+.container-raport .column-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-raport .column-input div {
+  display: flex;
+  gap: 0.2em;
+}
+
+.container-raport .column-input div:first-child {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.container-raport .column-input div:first-child input {
+  width: 64%;
+}
+
+.container-raport .column-input .boxArr {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.container-raport .column-input:has(.boxArr) {
+  gap: 0.2em;
+}
+
+.container-raport .column-input .boxArr select,
+.container-raport .column-input .boxArr input {
+  width: calc(100% - 34px);
+}

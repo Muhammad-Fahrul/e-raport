@@ -1,0 +1,38 @@
+:root {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+  --black: #000000;
+  --ch-black: #141414;
+  --eer-black: #1b1b1b;
+  --night-rider: #2e2e2e;
+  --white: #ffffff;
+  --af-white: #f3f3f3;
+  --ch-white: #e1e1e1;
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #141414;
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+}
+
+body {
+  color: var(--font-color);
+}
+
+.container-global {
+  max-width: 400px;
+  position: relative;
+  padding: 0.5em;
+  min-height: calc(100vh - 60px);
+  margin-inline: auto;
+}

@@ -1,0 +1,117 @@
+.container-student-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.466);
+  padding: 1em;
+}
+
+.container-student-new .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  max-width: 350px;
+  flex-direction: column;
+  border-radius: 15px;
+  border-radius: 8px;
+  padding: 1em;
+  gap: 1em;
+}
+
+.container-student-new .wrapper .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 0;
+}
+.container-student-new .wrapper .inputBox span {
+  text-align: center;
+  width: 100px;
+}
+
+.container-student-new .wrapper .inputBox {
+  position: relative;
+  width: 200px;
+}
+
+.container-student-new .wrapper .inputBox input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  background: transparent;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.container-student-new .wrapper .inputBox span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+.container-student-new .wrapper .inputBox input:valid ~ span,
+.container-student-new .wrapper .inputBox input:focus ~ span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #000;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 2px;
+}
+
+.container-student-new .wrapper .inputBox input:valid,
+.container-student-new .wrapper .inputBox input:focus {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.container-student-new .wrapper .enter {
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.container-student-new .wrapper .inputBox:has(select) {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-student-new .wrapper .inputBox select {
+  text-transform: capitalize;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.5em;
+}

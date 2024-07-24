@@ -1,0 +1,54 @@
+.container-table-raport {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-height: 395px;
+  overflow-x: scroll;
+}
+
+.container-table-raport .table-raport {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-table-raport .table-raport thead {
+  background-color: var(--primary-color);
+}
+
+.container-table-raport .table-raport thead th {
+  color: white;
+  font-weight: normal;
+  width: 70px;
+  padding: 0.5em;
+}
+
+.container-table-raport .table-raport tbody td {
+  min-width: 60px;
+  text-align: center;
+}
+
+.container-table-raport .table-raport tbody td select {
+  max-width: 100px;
+}
+
+.container-table-raport .table-raport tr {
+  height: 35px;
+}
+
+.container-table-raport .table-raport tr:nth-child(even) {
+  background-color: rgb(207, 207, 207);
+}
+
+.paging {
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+  padding: 0.3em;
+  background-color: var(--primary-color);
+}
+
+button.detail-raport-preview-btn {
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  color: var(--primary-color);
+}
