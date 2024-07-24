@@ -1,0 +1,1 @@
+import{P as e,j as s}from"./index-X8ORgRL-.js";const n=({children:t,text:i})=>s.jsxs("button",{className:"button-icon-position-fixed",children:[s.jsx("div",{className:"icon",children:t}),s.jsx("div",{className:"text",children:i})]});n.propTypes={children:e.element.isRequired,text:e.string.isRequired};export{n as B};
