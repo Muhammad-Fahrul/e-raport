@@ -1,0 +1,1 @@
+import{P as e,j as s}from"./index-C4EYCwQF.js";const n=({children:t,text:i,style:o})=>s.jsxs("button",{className:"button-icon-position-fixed",style:o,children:[s.jsx("div",{className:"icon",children:t}),s.jsx("div",{className:"text",children:i})]});n.propTypes={children:e.element.isRequired,text:e.string.isRequired,style:e.object};export{n as B};

@@ -1,0 +1,1 @@
+import{j as o,B as t}from"./index-C4EYCwQF.js";function r(){return o.jsxs("div",{children:[o.jsx("h3",{style:{marginBottom:"1em"},children:"Sorry, the page you were looking for was not found."}),o.jsx(t,{url:"/",text:"Home"})]})}export{r as default};

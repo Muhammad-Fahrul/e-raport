@@ -81,7 +81,7 @@ const getUsers = asyncHandler(async (req, res) => {
 });
 
 const updateUser = asyncHandler(async (req, res) => {
-  const userId = req.userId;
+  const userId = req.user.id;
   const { phone, oldPassword, newPassword } = req.body;
 
   UserValidator.validateUserUpdatePayload({ phone, oldPassword, newPassword });

@@ -16,12 +16,30 @@ import analysisRoutes from '../routes/analysisRoutes.js';
 import collaboratorRoutes from '../routes/collaboratorRoutes.js';
 
 import { errorHandler, notFound } from '../middleware/errorMiddleware.js';
+import credentials from '../middleware/credentials.js';
 
 const app = express();
 app.use(cookieParser());
+app.use(credentials);
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+const __dirname = path.resolve();
+
+app.use(
+  express.static(path.join(__dirname, 'frontend/dist'), {
+    setHeaders: (res, filePath) => {
+      console.log(path.extname(filePath));
+
+      if (path.extname(filePath) === '.html') {
+        res.setHeader('Cache-Control', 'no-cache');
+      } else {
+        res.setHeader('Cache-Control', 'max-age=31536000'); // Cache untuk file selain HTML
+      }
+    },
+  })
+);
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -33,18 +51,34 @@ app.use('/api/records', recordRoutes);
 app.use('/api/analysis', analysisRoutes);
 app.use('/api/collaborators', collaboratorRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-  const __dirname = path.resolve();
-  app.use(express.static(path.join(__dirname, '/frontend/dist')));
+// Middleware to set Cache-Control headers
+// app.use(
+//   express.static(path.join(__dirname, 'frontend/dist'), {
+//     setHeaders: (res, filePath) => {
+//       if (path.extname(filePath) === '.html') {
+//         res.setHeader('Cache-Control', 'no-cache');
+//       } else {
+//         res.setHeader('Cache-Control', 'max-age=31536000'); // Cache untuk file selain HTML
+//       }
+//     },
+//   })
+// );
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-  });
-} else {
-  app.get('/', (req, res) => {
-    res.send('API is running');
-  });
-}
+// // Middleware untuk menyajikan file statis dan mengatur header MIME type
+// app.use(
+//   express.static(path.join(__dirname, './frontend/dist'), {
+//     setHeaders: (res, filePath) => {
+//       if (path.extname(filePath) === '.js') {
+//         res.setHeader('Content-Type', 'application/javascript');
+//       }
+//     },
+//   })
+// );
+
+// Menangani semua permintaan lainnya dengan mengirimkan file index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'frontend/dist', 'index.html'));
+});
 
 app.use(notFound);
 app.use(errorHandler);

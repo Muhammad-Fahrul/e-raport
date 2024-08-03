@@ -50,6 +50,14 @@ export const studentApiSlice = apiSlice.injectEndpoints({
         { type: 'Student', id: arg.id },
       ],
     }),
+    addStudents: builder.mutation({
+      query: (formData) => ({
+        url: `${STUDENT_URL}/multiple`,
+        method: 'POST',
+        body: formData,
+      }),
+      invalidatesTags: ['Student'],
+    }),
   }),
 });
 
@@ -57,4 +65,5 @@ export const {
   useAddStudentMutation,
   useDeleteStudentMutation,
   useGetStudentsByMentorIdQuery,
+  useAddStudentsMutation,
 } = studentApiSlice;

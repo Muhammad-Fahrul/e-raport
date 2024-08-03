@@ -11,9 +11,11 @@ import Error from '../../../components/error/Error.jsx';
 
 import { useGetStudentsByMentorIdQuery } from '../redux/studentApiSlice.js';
 import useAuth from '../../../hooks/useAuth.js';
+import NewStudents from './components/newStudents/NewStudents.jsx';
 
 const StudentList = () => {
   const [screen, setScreen] = useState(false);
+  const [screen2, setScreen2] = useState(true);
   const [searchName, setSearchName] = useState('');
 
   const authUser = useAuth();
@@ -28,6 +30,7 @@ const StudentList = () => {
   const handleClose = (e) => {
     if (e.target.className === 'container-student-new') {
       setScreen(false);
+      setScreen2(false);
     }
   };
 
@@ -109,16 +112,26 @@ const StudentList = () => {
 
       {screen && (
         <div className="container-student-new" onClick={handleClose}>
-          <NewStudent setScreen={setScreen} />
+          {screen2 ? <NewStudent setScreen={setScreen} /> : <NewStudents />}
+          <button
+            style={{ padding: '.1em', width: '200px', color: 'blue' }}
+            onClick={() => {
+              setScreen2(!screen2);
+            }}
+          >
+            add {screen2 ? 'multipe user here' : 'single user here'}
+          </button>
         </div>
       )}
 
       {authUser.isMentor && (
-        <div onClick={() => setScreen(true)}>
-          <ButtonIcon text="NEW">
-            <i className="fa-solid fa-plus"></i>
-          </ButtonIcon>
-        </div>
+        <>
+          <div onClick={() => setScreen(true)}>
+            <ButtonIcon text="NEW">
+              <i className="fa-solid fa-plus"></i>
+            </ButtonIcon>
+          </div>
+        </>
       )}
     </div>
   );

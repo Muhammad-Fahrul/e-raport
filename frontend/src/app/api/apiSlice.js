@@ -6,7 +6,7 @@ import {
 
 const baseQuery = fetchBaseQuery({
   baseUrl:
-    import.meta.env.VITE_NODE_ENV !== 'development'
+    import.meta.env.VITE_NODE_ENV === 'production'
       ? import.meta.env.VITE_URL_RAPORT_API
       : import.meta.env.VITE_URL_LOCAL,
   credentials: 'include',

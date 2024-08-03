@@ -50,7 +50,7 @@ const NewRaportRelation = ({ userDisplayed, setScreen }) => {
       <select
         name="inputType"
         required
-        onClick={(e) => {
+        onChange={(e) => {
           e.preventDefault();
           setRaporId(e.target.value);
         }}

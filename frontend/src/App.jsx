@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import store from './app/store.js';
-import { ROLES } from './config/roles.js';
+import { ROLES } from './config/roles.js'
 import { lazyLoad } from './lazyLoad.js';
 
 import MainLayout from './layout/MainLayout';

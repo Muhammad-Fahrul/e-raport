@@ -3,6 +3,8 @@ import User from '../models/userModel.js';
 import asyncHandler from 'express-async-handler';
 import UserValidator from '../validator/user/index.js';
 import Record from '../models/recordModel.js';
+import fs from 'fs';
+import csv from 'csv-parser';
 
 const createNewStudent = asyncHandler(async (req, res) => {
   const { username, password } = req.body;
@@ -19,7 +21,7 @@ const createNewStudent = asyncHandler(async (req, res) => {
     username,
     password,
     role: 'student',
-    mentorId: req.userId,
+    mentorId: req.user.id,
   });
 
   const salt = await bcrypt.genSalt(10);
@@ -82,4 +84,58 @@ const deleteStudentById = asyncHandler(async (req, res) => {
   });
 });
 
-export { createNewStudent, getStudentsByMentorId, deleteStudentById };
+const createNewStudents = asyncHandler(async (req, res) => {
+  const file = req.file;
+
+  if (!file) {
+    return res.status(400).json({ message: 'No file uploaded' });
+  }
+
+  const users = [];
+  fs.createReadStream(file.path)
+    .pipe(csv())
+    .on('data', (row) => {
+      users.push(row);
+    })
+    .on('end', async () => {
+      try {
+        const hashedUsers = await Promise.all(
+          users.map(async (user) => {
+            const { username, password } = user;
+
+            let existingUser = await User.findOne({ username }).lean().exec();
+            if (existingUser) {
+              return null; // Skip if user already exists
+            }
+
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(password, salt);
+
+            return {
+              username,
+              password: hashedPassword,
+              role: 'student',
+              mentorId: req.user.id,
+            };
+          })
+        );
+
+        const validUsers = hashedUsers.filter((user) => user !== null);
+
+        await User.insertMany(validUsers);
+
+        fs.unlinkSync(file.path);
+        res.status(201).json({ message: 'Users added successfully' });
+      } catch (err) {
+        fs.unlinkSync(file.path);
+        res.status(500).json({ message: 'Failed to process file' });
+      }
+    });
+});
+
+export {
+  createNewStudent,
+  getStudentsByMentorId,
+  deleteStudentById,
+  createNewStudents,
+};
